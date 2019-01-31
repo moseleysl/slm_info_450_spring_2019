@@ -3,29 +3,43 @@
 
 #include "pch.h"
 #include <iostream>
+using namespace std;
 
 int main()
 {
-	int i = 0;
-	int response = 1;
+	int response = 0;
+	
 
-	cout << "Enter a number and I will tell you if it is prime or not. Enter 0 to close" << endl;
-
-	cin >> response;
-
-	while (response != 0)
+	while (1)
 	{
 
+		bool isPrime = true;
+
+		cout << "Enter a number and I will tell you if it is prime or not. Enter 0 to close" << endl;
+		cin >> response;
+
+		if (response == 0) {
+			break;
+		}
+		else {
+			for (int i = 2; i < response; i++) {
+				if (response <= 3) {
+					isPrime = true;
+				}
+
+				else if (response % i == 0) {
+					 isPrime = false;
+					break;
+				}
+			}
+			if (isPrime) {
+				cout << "The number is prime" << endl;
+			}
+			else {
+				cout << "The number is not prime" << endl;
+			}
+		}
 	}
+
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

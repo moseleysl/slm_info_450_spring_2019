@@ -7,12 +7,13 @@ using namespace std;
 
 int main()
 {
-	int response = 0;
+	
 	
 
 	while (1)
 	{
 
+		int response = 0;
 		bool isPrime = true;
 
 		cout << "Enter a number and I will tell you if it is prime or not. Enter 0 to close" << endl;

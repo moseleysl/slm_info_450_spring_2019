@@ -25,6 +25,7 @@ int main()
 			for (int i = 2; i < response; i++) {
 				if (response <= 3) {
 					isPrime = true;
+					break;
 				}
 
 				else if (response % i == 0) {

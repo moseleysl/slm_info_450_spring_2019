@@ -1,30 +1,36 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+const int STUDENTS = 30;
+const int SIZE = 128;
+
 int main()
 {
-    char names[30][128];
+    int i = 0;
+    int total = 0;
+    char names[STUDENTS][SIZE];
     
-    cout << "Enter in up to 30 names, or hit enter to stop " << endl;
+    for(i = 0; i < STUDENTS; i++){
+        strcpy(names[i], "");
+    }
     
-    for(int row = 0; row < 30; row++){
+    for(i = 0; i < STUDENTS; i++){
         
-        string str;
+        cout << "Enter in up to 30 names, or hit enter to stop " << i << " :";
+        cin.getline(names[i],SIZE);
         
-        getline(cin, str);
-        
-        if( str.length() == 0){
+        if(!strcmp("/0" , names[i]) ){
             break;
         }
         
-        else {
-        cin.getline(names[row],128);
-        }
+        total++;
+       // cout << i << endl;
     }
     
-    for (int i = 0; i < 30; i++){
-        for (int j = 0; j < 128; j++){
-            cout << names[i][j]; 
-        }
+    for (i = 0; i < total; i++){
+            cout <<  "Names[" << i << "] = " << names[i] << endl;
     }
     
-
-    return 0;
 }

@@ -45,5 +45,31 @@ class Employee
 
 int main()
 {
+    const int MAX = 3;
+    Employee entries[MAX];
     
+    for (int x=0; x < MAX; x++){
+        char *myvalue = (char *)malloc(255);
+        
+        cout << "Enter first name of employee " << x << endl;
+        cin getline(myvalue.255);
+        entries[x].set_fName(myvalue);
+        
+        cout << "Enter last name of employee " << x << endl;
+        cin getline(myvalue.255);
+        entries[x].set_lName(myvalue);
+        
+        cout << "Enter Salary or Hourly for employee " << x << endl;
+        cin getline(myvalue.20);
+        entries[x].set_hourlyEmp( strcmp(myvalue, "Hourly") == 0);
+        cout << "Enter compensatiion as per hour if houlry or annually if Salary" << endl;
+        cin getline(myvalue.255);
+        entries[x].set_compensation( stod(myvalue) );
+    }
+    
+    for (int x = 0; x< MAX; x++){
+        entries[x].printLine();
+    }
+    
+    return 0;
 }

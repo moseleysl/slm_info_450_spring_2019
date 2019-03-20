@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 class node{
@@ -20,20 +21,24 @@ void node::print_data(){
     next->print_data();
 }
 
+
+
 void node::insert_number(int number){
-     
-     /** if (next == NULL){
+    /** 
+      if (next == NULL){
          next = new node;
          next -> data = number; 
      }else{
          next->insert_number(number);
      }
     **/
+    
+    
     node* temp = new node;
     temp->data = number;
     
-    node* temp2 = head;
-    node** temp3 = &head;
+    node* temp2 = next;
+    node** temp3 = &next;
     
     while(temp2 != NULL && temp2->data < temp->data)
     {
@@ -45,8 +50,9 @@ void node::insert_number(int number){
     temp ->next = temp2;
     
     
-    
 }
+
+
 
 bool node::contains(int number){ 
     if (data == number){
@@ -65,6 +71,8 @@ void node::print_in_order(){
     }
 }
 
+
+
 int main(){
     node linked_list;
     linked_list.data = 0;
@@ -77,3 +85,4 @@ int main(){
     linked_list.print_in_order();   
     return 0;
 }
+
